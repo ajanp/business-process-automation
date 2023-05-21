@@ -575,25 +575,6 @@
     {
       "type": "Microsoft.CognitiveServices/accounts/deployments",
       "apiVersion": "2023-05-15",
-      "name": "[concat(parameters('openaiName'), '/text-embedding-ada-002')]",
-      "dependsOn": [
-        "[resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName'))]",
-        "[resourceId('Microsoft.CognitiveServices/accounts/deployments', parameters('openaiName'),  'text-embedding-ada-002')]"
-      ],
-      "properties": {
-        "model": {
-          "format": "OpenAI",
-          "name": "text-embedding-ada-002",
-          "version": "1"
-        },
-        "scaleSettings": {
-          "scaleType": "Standard"
-        }
-      }
-    },
-    {
-      "type": "Microsoft.CognitiveServices/accounts/deployments",
-      "apiVersion": "2023-05-15",
       "name": "[concat(parameters('openaiName'), '/text-davinci-003')]",
       "dependsOn": [
         "[resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName'))]",
