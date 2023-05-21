@@ -568,7 +568,8 @@
           "version": "2"
         },
         "sku": {
-          "name": "S0"
+          "name": "S0",
+          "tier": "Standard"
         }
       }
     },
@@ -587,7 +588,8 @@
           "version": "1"
         },
         "sku": {
-          "name": "S0"
+          "name": "S0",
+          "tier": "Standard"
         }
       }
     },
@@ -606,7 +608,8 @@
           "version": "0301"
         },
         "sku": {
-          "name": "S0"
+          "name": "S0",
+          "tier": "Standard"
         }
       }
     },
