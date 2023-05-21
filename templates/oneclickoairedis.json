@@ -567,8 +567,9 @@
           "name": "text-embedding-ada-002",
           "version": "1"
         },
-        "scaleSettings": {
-          "scaleType": "Standard"
+        "sku": {
+          "name": "S0",
+          "tier": "Standard"
         }
       }
     },
@@ -586,8 +587,9 @@
           "name": "text-davinci-003",
           "version": "1"
         },
-        "scaleSettings": {
-          "scaleType": "Standard"
+        "sku": {
+          "name": "S0",
+          "tier": "Standard"
         }
       }
     },
@@ -605,8 +607,9 @@
           "name": "gpt-35-turbo",
           "version": "0301"
         },
-        "scaleSettings": {
-          "scaleType": "Standard"
+        "sku": {
+          "name": "S0",
+          "tier": "Standard"
         }
       }
     },
