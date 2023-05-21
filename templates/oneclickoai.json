@@ -541,7 +541,7 @@
       "dependsOn": []
     },
     {
-      "apiVersion": "2023-05-01",
+      "apiVersion": "2022-12-01",
       "kind": "OpenAI",
       "location": "eastus",
       "name": "[parameters('openaiName')]",
@@ -556,7 +556,7 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts/deployments",
-      "apiVersion": "2023-05-01",
+      "apiVersion": "2022-12-01",
       "name": "[concat(parameters('openaiName'), '/text-embedding-ada-002')]",
       "dependsOn": [
         "[resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName'))]"
@@ -567,15 +567,14 @@
           "name": "text-embedding-ada-002",
           "version": "2"
         },
-        "sku": {
-          "name": "S0",
-          "tier": "Standard"
+        "scaleSettings": {
+          "scaleType": "Standard"
         }
       }
     },
     {
       "type": "Microsoft.CognitiveServices/accounts/deployments",
-      "apiVersion": "2023-05-01",
+      "apiVersion": "2022-12-01",
       "name": "[concat(parameters('openaiName'), '/text-davinci-003')]",
       "dependsOn": [
         "[resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName'))]",
@@ -587,15 +586,14 @@
           "name": "text-davinci-003",
           "version": "1"
         },
-        "sku": {
-          "name": "S0",
-          "tier": "Standard"
+        "scaleSettings": {
+          "scaleType": "Standard"
         }
       }
     },
     {
       "type": "Microsoft.CognitiveServices/accounts/deployments",
-      "apiVersion": "2023-05-01",
+      "apiVersion": "2022-12-01",
       "name": "[concat(parameters('openaiName'), '/chatgpt')]",
       "dependsOn": [
         "[resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName'))]",
@@ -607,9 +605,8 @@
           "name": "gpt-35-turbo",
           "version": "0301"
         },
-        "sku": {
-          "name": "S0",
-          "tier": "Standard"
+        "scaleSettings": {
+          "scaleType": "Standard"
         }
       }
     },
