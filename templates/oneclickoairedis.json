@@ -476,7 +476,7 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts",
-      "apiVersion": "2021-10-01",
+      "apiVersion": "2023-05-15",
       "name": "[parameters('cogServicesName')]",
       "location": "[parameters('primaryRegion')]",
       "sku": {
@@ -488,7 +488,7 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts",
-      "apiVersion": "2021-10-01",
+      "apiVersion": "2023-05-15",
       "name": "[parameters('languageServicesName')]",
       "location": "[parameters('languageServicesLocation')]",
       "sku": {
@@ -542,7 +542,7 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts",
-      "apiVersion": "2022-12-01",
+      "apiVersion": "2023-05-15",
       "name": "[parameters('openaiName')]",
       "location": "southcentralus",
       "sku": {
@@ -556,15 +556,15 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts/deployments",
-      "apiVersion": "2022-12-01",
-      "name": "[concat(parameters('openaiName'), '/text-search-curie-doc-001')]",
+      "apiVersion": "2023-05-15",
+      "name": "[concat(parameters('openaiName'), '/text-embedding-ada-002')]",
       "dependsOn": [
         "[resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName'))]"
       ],
       "properties": {
         "model": {
           "format": "OpenAI",
-          "name": "text-search-curie-doc-001",
+          "name": "text-embedding-ada-002",
           "version": "1"
         },
         "scaleSettings": {
@@ -574,16 +574,16 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts/deployments",
-      "apiVersion": "2022-12-01",
-      "name": "[concat(parameters('openaiName'), '/text-search-curie-query-001')]",
+      "apiVersion": "2023-05-15",
+      "name": "[concat(parameters('openaiName'), '/text-embedding-ada-002')]",
       "dependsOn": [
         "[resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName'))]",
-        "[resourceId('Microsoft.CognitiveServices/accounts/deployments', parameters('openaiName'),  'text-search-curie-doc-001')]"
+        "[resourceId('Microsoft.CognitiveServices/accounts/deployments', parameters('openaiName'),  'text-embedding-ada-002')]"
       ],
       "properties": {
         "model": {
           "format": "OpenAI",
-          "name": "text-search-curie-query-001",
+          "name": "text-embedding-ada-002",
           "version": "1"
         },
         "scaleSettings": {
@@ -593,16 +593,16 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts/deployments",
-      "apiVersion": "2022-12-01",
-      "name": "[concat(parameters('openaiName'), '/text-davinci-002')]",
+      "apiVersion": "2023-05-15",
+      "name": "[concat(parameters('openaiName'), '/text-davinci-003')]",
       "dependsOn": [
         "[resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName'))]",
-        "[resourceId('Microsoft.CognitiveServices/accounts/deployments', parameters('openaiName'),  'text-search-curie-query-001')]"
+        "[resourceId('Microsoft.CognitiveServices/accounts/deployments', parameters('openaiName'),  'text-embedding-ada-002')]"
       ],
       "properties": {
         "model": {
           "format": "OpenAI",
-          "name": "text-davinci-002",
+          "name": "text-davinci-003",
           "version": "1"
         },
         "scaleSettings": {
@@ -612,11 +612,11 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts/deployments",
-      "apiVersion": "2022-12-01",
+      "apiVersion": "2023-05-15",
       "name": "[concat(parameters('openaiName'), '/chatgpt')]",
       "dependsOn": [
         "[resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName'))]",
-        "[resourceId('Microsoft.CognitiveServices/accounts/deployments', parameters('openaiName'),  'text-davinci-002')]"
+        "[resourceId('Microsoft.CognitiveServices/accounts/deployments', parameters('openaiName'),  'text-davinci-003')]"
       ],
       "properties": {
         "model": {
@@ -716,7 +716,7 @@
             },
             {
               "name": "AZURE_OPENAI_GPT_DEPLOYMENT",
-              "value": "text-davinci-002"
+              "value": "text-davinci-003"
             },
             {
               "name": "AZURE_OPENAI_SERVICE",
@@ -748,7 +748,7 @@
             },
             {
               "name": "OPENAI_API_KEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName')), '2022-12-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName')), '2023-05-15').key1]"
             },
             {
               "name": "REDIS_URL",
@@ -787,23 +787,23 @@
             },
             {
               "name": "OPENAI_KEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName')), '2022-12-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName')), '2023-05-15').key1]"
             },
             {
               "name": "OPENAI_ENDPOINT",
-              "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName')), '2021-10-01').endpoint]"
+              "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName')), '2023-05-15').endpoint]"
             },
             {
               "name": "OPENAI_DEPLOYMENT_TEXT",
-              "value": "text-davinci-002"
+              "value": "text-davinci-003"
             },
             {
               "name": "OPENAI_DEPLOYMENT_SEARCH_DOC",
-              "value": "text-search-curie-doc-001"
+              "value": "text-embedding-ada-002"
             },
             {
               "name": "OPENAI_DEPLOYMENT_SEARCH_QUERY",
-              "value": "text-search-curie-query-001"
+              "value": "text-embedding-ada-002"
             },
             {
               "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
@@ -859,7 +859,7 @@
             },
             {
               "name": "DOCUMENT_TRANSLATION_KEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('docTranslatorAccountName')), '2021-10-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('docTranslatorAccountName')), '2023-05-15').key1]"
             },
             {
               "name": "COSMOSDB_CONNECTION_STRING",
@@ -879,7 +879,7 @@
             },
             {
               "name": "OCR_APIKEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2021-10-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-15').key1]"
             },
             {
               "name": "CONTENT_MODERATOR_ENDPOINT",
@@ -887,7 +887,7 @@
             },
             {
               "name": "CONTENT_MODERATOR_KEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2021-10-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-15').key1]"
             },
             {
               "name": "LANGUAGE_STUDIO_PREBUILT_ENDPOINT",
@@ -895,11 +895,11 @@
             },
             {
               "name": "LANGUAGE_STUDIO_PREBUILT_APIKEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('languageServicesName')), '2021-10-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('languageServicesName')), '2023-05-15').key1]"
             },
             {
               "name": "FORMREC_APIKEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2021-10-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-15').key1]"
             },
             {
               "name": "FORMREC_ENDPOINT",
@@ -922,11 +922,11 @@
             },
             {
               "name": "SPEECH_SUB_KEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2021-10-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-15').key1]"
             },
             {
               "name": "SPEECH_SUB_REGION",
-              "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2021-10-01', 'full').location]"
+              "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-15', 'full').location]"
             },
             {
               "name": "SPEECH_SUB_ENDPOINT",
@@ -934,11 +934,11 @@
             },
             {
               "name": "TRANSLATE_APIKEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2021-10-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-15').key1]"
             },
             {
               "name": "TRANSLATE_REGION",
-              "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2021-10-01', 'full').location]"
+              "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-15', 'full').location]"
             },
             {
               "name": "TRANSLATE_ENDPOINT",
@@ -988,11 +988,11 @@
       "name": "[format('{0}/{1}', parameters('webAppName'), 'appsettings')]",
       "kind": "staticWebAppSettings",
       "properties": {
-        "OPENAI_KEY": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName')), '2022-12-01').key1]",
-        "OPENAI_ENDPOINT": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName')), '2021-10-01').endpoint]",
-        "OPENAI_DEPLOYMENT_TEXT": "text-davinci-002",
-        "OPENAI_DEPLOYMENT_SEARCH_DOC": "text-search-curie-doc-001",
-        "OPENAI_DEPLOYMENT_SEARCH_QUERY": "text-search-curie-query-001",
+        "OPENAI_KEY": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName')), '2023-05-15').key1]",
+        "OPENAI_ENDPOINT": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('openaiName')), '2023-05-15').endpoint]",
+        "OPENAI_DEPLOYMENT_TEXT": "text-davinci-003",
+        "OPENAI_DEPLOYMENT_SEARCH_DOC": "text-embedding-ada-002",
+        "OPENAI_DEPLOYMENT_SEARCH_QUERY": "text-embedding-ada-002",
         "COSMOS_DB_CONNECTION_STRING": "[format('AccountEndpoint=https://{0}.documents.azure.com:443/;AccountKey={1};', parameters('cosmosdbAccountName'), listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', variables('accountName_var')), '2021-01-15').primaryMasterKey)]",
         "COSMOS_DB_DB": "[parameters('cosmosDbName')]",
         "COSMOS_DB_CONTAINER": "[parameters('cosmosContainerName')]",
