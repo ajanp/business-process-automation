@@ -121,7 +121,7 @@
     },
     "languageServicesLocation": {
       "type": "string",
-      "defaultValue": "westus2"
+      "defaultValue": "eastus"
     },
     "environmentType": {
       "type": "string",
@@ -472,7 +472,7 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts",
-      "apiVersion": "2023-05-15",
+      "apiVersion": "2023-05-01",
       "name": "[parameters('cogServicesName')]",
       "location": "[parameters('primaryRegion')]",
       "sku": {
@@ -484,7 +484,7 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts",
-      "apiVersion": "2023-05-15",
+      "apiVersion": "2023-05-01",
       "name": "[parameters('languageServicesName')]",
       "location": "[parameters('languageServicesLocation')]",
       "sku": {
@@ -552,7 +552,7 @@
           "appSettings": [
             {
               "name": "WEBSITE_RUN_FROM_PACKAGE",
-              "value": "https://bpasource.blob.core.windows.net/source/huggingface/hf_backend_v010.zip?sv=2021-10-04&st=2023-05-15T17%3A03%3A40Z&se=2024-03-21T17%3A03%3A00Z&sr=b&sp=r&sig=Y%2FS4IxUo5%2BexSWvtbF2LgaOCPXyDfN4ZS1t3NfG29Ds%3D"
+              "value": "https://bpasource.blob.core.windows.net/source/huggingface/hf_backend_v010.zip?sv=2021-10-04&st=2023-05-01T17%3A03%3A40Z&se=2024-03-21T17%3A03%3A00Z&sr=b&sp=r&sig=Y%2FS4IxUo5%2BexSWvtbF2LgaOCPXyDfN4ZS1t3NfG29Ds%3D"
             },  
             {
               "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
@@ -643,7 +643,7 @@
           "appSettings": [
             {
               "name": "WEBSITE_RUN_FROM_PACKAGE",
-              "value": "https://bpasource.blob.core.windows.net/source/backendv028.zip?sv=2021-10-04&st=2023-05-15T17%3A02%3A04Z&se=2024-04-25T17%3A02%3A00Z&sr=b&sp=r&sig=FGBIJoEz1X6UhGZrbO0fMc674OvkkB2eUiK0XZCpboA%3D"
+              "value": "https://bpasource.blob.core.windows.net/source/backendv028.zip?sv=2021-10-04&st=2023-05-01T17%3A02%3A04Z&se=2024-04-25T17%3A02%3A00Z&sr=b&sp=r&sig=FGBIJoEz1X6UhGZrbO0fMc674OvkkB2eUiK0XZCpboA%3D"
             },
             {
               "name": "APPINSIGHTS_INSTRUMENTATIONKEY",

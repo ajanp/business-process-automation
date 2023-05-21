@@ -112,7 +112,7 @@
     },
     "languageServicesLocation": {
       "type": "string",
-      "defaultValue": "westus2"
+      "defaultValue": "eastus"
     },
     "environmentType": {
       "type": "string",
@@ -445,7 +445,7 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts",
-      "apiVersion": "2023-05-15",
+      "apiVersion": "2023-05-01",
       "name": "[parameters('cogServicesName')]",
       "location": "[parameters('primaryRegion')]",
       "sku": {
@@ -457,7 +457,7 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts",
-      "apiVersion": "2023-05-15",
+      "apiVersion": "2023-05-01",
       "name": "[parameters('languageServicesName')]",
       "location": "[parameters('languageServicesLocation')]",
       "sku": {

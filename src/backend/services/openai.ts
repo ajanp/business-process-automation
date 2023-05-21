@@ -28,7 +28,7 @@ export class OpenAI {
             headers: headers
         }
 
-        let url = `${this._endpoint}openai/deployments/${this._deploymentId}/completions?api-version=2023-05-15`
+        let url = `${this._endpoint}openai/deployments/${this._deploymentId}/completions?api-version=2023-05-01`
 
         const openAiInput = {
             "prompt": input.data.slice(0, 4000) + "\n\n Tl;dr:",
@@ -66,7 +66,7 @@ export class OpenAI {
             headers: headers
         }
 
-        let url = `${this._endpoint}openai/deployments/${this._deploymentId}/completions?api-version=2023-05-15`
+        let url = `${this._endpoint}openai/deployments/${this._deploymentId}/completions?api-version=2023-05-01`
 
         const truncatedString = input.data.slice(0, 3500)
 
@@ -103,7 +103,7 @@ export class OpenAI {
             headers: headers
         }
 
-        let url = `${this._endpoint}openai/deployments/${this._deploymentId}/completions?api-version=2023-05-15`
+        let url = `${this._endpoint}openai/deployments/${this._deploymentId}/completions?api-version=2023-05-01`
 
         const openAiInput = {
             "prompt": prompt,
@@ -124,7 +124,7 @@ export class OpenAI {
             headers: headers
         }
 
-        let url = `${this._endpoint}openai/deployments/${this._deploymentId}/embeddings?api-version=2023-05-15`
+        let url = `${this._endpoint}openai/deployments/${this._deploymentId}/embeddings?api-version=2023-05-01`
 
         const truncatedString = text.slice(0, 3500)
 
@@ -148,7 +148,7 @@ export class OpenAI {
             headers: headers
         }
 
-        let url = `${this._endpoint}openai/deployments/${this._deploymentId}/embeddings?api-version=2023-05-15`
+        let url = `${this._endpoint}openai/deployments/${this._deploymentId}/embeddings?api-version=2023-05-01`
 
         const truncatedString = input.data.slice(0, 2000)
 
