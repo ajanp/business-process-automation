@@ -472,7 +472,7 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts",
-      "apiVersion": "2023-05-01",
+      "apiVersion": "2022-12-01",
       "name": "[parameters('cogServicesName')]",
       "location": "[parameters('primaryRegion')]",
       "sku": {
@@ -484,7 +484,7 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts",
-      "apiVersion": "2023-05-01",
+      "apiVersion": "2022-12-01",
       "name": "[parameters('languageServicesName')]",
       "location": "[parameters('languageServicesLocation')]",
       "sku": {
@@ -552,7 +552,7 @@
           "appSettings": [
             {
               "name": "WEBSITE_RUN_FROM_PACKAGE",
-              "value": "https://bpasource.blob.core.windows.net/source/huggingface/hf_backend_v010.zip?sv=2021-10-04&st=2023-05-01T17%3A03%3A40Z&se=2024-03-21T17%3A03%3A00Z&sr=b&sp=r&sig=Y%2FS4IxUo5%2BexSWvtbF2LgaOCPXyDfN4ZS1t3NfG29Ds%3D"
+              "value": "https://bpasource.blob.core.windows.net/source/huggingface/hf_backend_v010.zip?sv=2021-10-04&st=2022-12-01T17%3A03%3A40Z&se=2024-03-21T17%3A03%3A00Z&sr=b&sp=r&sig=Y%2FS4IxUo5%2BexSWvtbF2LgaOCPXyDfN4ZS1t3NfG29Ds%3D"
             },  
             {
               "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
@@ -643,7 +643,7 @@
           "appSettings": [
             {
               "name": "WEBSITE_RUN_FROM_PACKAGE",
-              "value": "https://bpasource.blob.core.windows.net/source/backendv028.zip?sv=2021-10-04&st=2023-05-01T17%3A02%3A04Z&se=2024-04-25T17%3A02%3A00Z&sr=b&sp=r&sig=FGBIJoEz1X6UhGZrbO0fMc674OvkkB2eUiK0XZCpboA%3D"
+              "value": "https://bpasource.blob.core.windows.net/source/backendv028.zip?sv=2021-10-04&st=2022-12-01T17%3A02%3A04Z&se=2024-04-25T17%3A02%3A00Z&sr=b&sp=r&sig=FGBIJoEz1X6UhGZrbO0fMc674OvkkB2eUiK0XZCpboA%3D"
             },
             {
               "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
@@ -699,7 +699,7 @@
             },
             {
               "name": "DOCUMENT_TRANSLATION_KEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('docTranslatorAccountName')), '2023-05-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('docTranslatorAccountName')), '2022-12-01').key1]"
             },
             {
               "name": "COSMOSDB_CONNECTION_STRING",
@@ -719,7 +719,7 @@
             },
             {
               "name": "OCR_APIKEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2022-12-01').key1]"
             },
             {
               "name": "CONTENT_MODERATOR_ENDPOINT",
@@ -727,7 +727,7 @@
             },
             {
               "name": "CONTENT_MODERATOR_KEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2022-12-01').key1]"
             },
             {
               "name": "LANGUAGE_STUDIO_PREBUILT_ENDPOINT",
@@ -735,11 +735,11 @@
             },
             {
               "name": "LANGUAGE_STUDIO_PREBUILT_APIKEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('languageServicesName')), '2023-05-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('languageServicesName')), '2022-12-01').key1]"
             },
             {
               "name": "FORMREC_APIKEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2022-12-01').key1]"
             },
             {
               "name": "FORMREC_ENDPOINT",
@@ -747,11 +747,11 @@
             },
             {
               "name": "SPEECH_SUB_KEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2022-12-01').key1]"
             },
             {
               "name": "SPEECH_SUB_REGION",
-              "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-01', 'full').location]"
+              "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2022-12-01', 'full').location]"
             },
             {
               "name": "SPEECH_SUB_ENDPOINT",
@@ -759,11 +759,11 @@
             },
             {
               "name": "TRANSLATE_APIKEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2022-12-01').key1]"
             },
             {
               "name": "TRANSLATE_REGION",
-              "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-01', 'full').location]"
+              "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2022-12-01', 'full').location]"
             },
             {
               "name": "TRANSLATE_ENDPOINT",

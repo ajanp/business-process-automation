@@ -445,7 +445,7 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts",
-      "apiVersion": "2023-05-01",
+      "apiVersion": "2021-10-01",
       "name": "[parameters('cogServicesName')]",
       "location": "[parameters('primaryRegion')]",
       "sku": {
@@ -457,7 +457,7 @@
     },
     {
       "type": "Microsoft.CognitiveServices/accounts",
-      "apiVersion": "2023-05-01",
+      "apiVersion": "2021-10-01",
       "name": "[parameters('languageServicesName')]",
       "location": "[parameters('languageServicesLocation')]",
       "sku": {
@@ -631,7 +631,7 @@
             },
             {
               "name": "DOCUMENT_TRANSLATION_KEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('docTranslatorAccountName')), '2023-05-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('docTranslatorAccountName')), '2021-10-01').key1]"
             },
             {
               "name": "COSMOSDB_CONNECTION_STRING",
@@ -651,7 +651,7 @@
             },
             {
               "name": "OCR_APIKEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2021-10-01').key1]"
             },
             {
               "name": "CONTENT_MODERATOR_ENDPOINT",
@@ -659,7 +659,7 @@
             },
             {
               "name": "CONTENT_MODERATOR_KEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2021-10-01').key1]"
             },
             {
               "name": "LANGUAGE_STUDIO_PREBUILT_ENDPOINT",
@@ -667,11 +667,11 @@
             },
             {
               "name": "LANGUAGE_STUDIO_PREBUILT_APIKEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('languageServicesName')), '2023-05-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('languageServicesName')), '2021-10-01').key1]"
             },
             {
               "name": "FORMREC_APIKEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2021-10-01').key1]"
             },
             {
               "name": "FORMREC_ENDPOINT",
@@ -679,11 +679,11 @@
             },
             {
               "name": "SPEECH_SUB_KEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2021-10-01').key1]"
             },
             {
               "name": "SPEECH_SUB_REGION",
-              "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-01', 'full').location]"
+              "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2021-10-01', 'full').location]"
             },
             {
               "name": "SPEECH_SUB_ENDPOINT",
@@ -691,11 +691,11 @@
             },
             {
               "name": "TRANSLATE_APIKEY",
-              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-01').key1]"
+              "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2021-10-01').key1]"
             },
             {
               "name": "TRANSLATE_REGION",
-              "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2023-05-01', 'full').location]"
+              "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', parameters('cogServicesName')), '2021-10-01', 'full').location]"
             },
             {
               "name": "TRANSLATE_ENDPOINT",

@@ -17,7 +17,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
             headers: headers
         }
 
-        let url = `${process.env.OPENAI_ENDPOINT}openai/deployments/${process.env.OPENAI_DEPLOYMENT_TEXT}/completions?api-version=2023-05-01`
+        let url = `${process.env.OPENAI_ENDPOINT}openai/deployments/${process.env.OPENAI_DEPLOYMENT_TEXT}/completions?api-version=2022-12-01`
 
         let truncatedString = ""
         if(req?.body?.text){
